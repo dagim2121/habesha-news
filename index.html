@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="am">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Habesha News | ዜና እና መረጃ</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, "Noto Sans Ethiopic", sans-serif;
+            background: #f4f6f9;
+            color: #202938;
+        }
+
+        header {
+            background: #123d32;
+            color: white;
+            padding: 24px 6%;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+            font-size: 32px;
+        }
+
+        header p {
+            margin: 0;
+        }
+
+        nav {
+            background: #205b49;
+            padding: 14px 6%;
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero {
+            padding: 35px 6%;
+            background: #dff4e9;
+        }
+
+        .hero h2 {
+            font-size: 30px;
+            margin-top: 0;
+        }
+
+        .hero p {
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 25px 20px;
+        }
+
+        .tools {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        input, select {
+            padding: 12px;
+            border: 1px solid #ccd3dc;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .news-card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #0000000d;
+        }
+
+        .tag {
+            color: #16805d;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .news-card h3 {
+            line-height: 1.6;
+        }
+
+        .news-card p {
+            line-height: 1.8;
+        }
+
+        .read-more {
+            background: #205b49;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .read-more:hover {
+            background: #123d32;
+        }
+
+        #about {
+            line-height: 1.9;
+            margin-top: 40px;
+            padding: 25px;
+            background: white;
+            border-radius: 12px;
+        }
+
+        footer {
+            text-align: center;
+            background: #123d32;
+            color: white;
+            padding: 22px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 26px;
+            }
+
+            .hero h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Habesha News</h1>
+        <p>ዜና እና መረጃ | News and Information</p>
+    </header>
+
+    <nav>
+        <a href="#">Home / መነሻ</a>
+        <a href="#news">News / ዜና</a>
+        <a href="#about">About / ስለ እኛ</a>
+    </nav>
+
+    <section class="hero">
+        <h2>እንኳን ወደ Habesha News በደህና መጡ!</h2>
+        <p>
+            የአማርኛና English ዜናዎችን እና መረጃዎችን
+            ለመማርና ለማጋራት የተዘጋጀ ድረ-ገጽ።
+        </p>
+        <p>Welcome to your source of news and information!</p>
+    </section>
+
+    <main class="container" id="news">
+
+        <h2>Latest News | የቅርብ ጊዜ ዜናዎች</h2>
+
+        <div class="tools">
+            <input
+                type="search"
+                id="search"
+                placeholder="ዜና ፈልግ... Search news"
+                aria-label="Search news"
+            >
+
+            <select id="category" aria-label="News category">
+                <option value="all">ሁሉም | All</option>
+                <option value="technology">ቴክኖሎጂ | Technology</option>
+                <option value="education">ትምህርት | Education</option>
+                <option value="general">አጠቃላይ | General</option>
+            </select>
+        </div>
+
+        <div class="news-grid" id="newsGrid">
+
+            <article class="news-card" data-category="technology">
+                <span class="tag">Technology | ቴክኖሎጂ</span>
+                <h3>የቴክኖሎጂ ዓለም</h3>
+                <p>
+                    ቴክኖሎጂ እንዴት የዕለት ተዕለት
+                    ኑሯችንን እየቀየረ እንደሆነ እንማር።
+                </p>
+                <button class="read-more"
+                    data-am="ይህ ስለ ቴክኖሎጂ ለመማር የተዘጋጀ የምሳሌ ጽሑፍ ነው።"
+                    data-en="This is a sample article about learning technology.">
+                    Read More / ተጨማሪ
+                </button>
+            </article>
+
+            <article class="news-card" data-category="education">
+                <span class="tag">Education | ትምህርት</span>
+                <h3>ከዜሮ የWeb Development ትምህርት</h3>
+                <p>
+                    HTML፣ CSS እና JavaScript በመማር
+                    የራስህን Website መሥራት ትችላለህ።
+                </p>
+                <button class="read-more"
+                    data-am="HTML የWebsite መሠረት ነው። CSS ዲዛይኑን ይቆጣጠራል። JavaScript ደግሞ ተግባራዊ ባህሪ ይጨምራል።"
+                    data-en="HTML provides structure, CSS controls design, and JavaScript adds interactivity.">
+                    Read More / ተጨማሪ
+                </button>
+            </article>
+
+            <article class="news-card" data-category="general">
+                <span class="tag">General | አጠቃላይ</span>
+                <h3>የእውቀት ጥቅም</h3>
+                <p>
+                    በየቀኑ አዳዲስ ነገሮችን መማር
+                    እውቀታችንን እንድናሳድግ ይረዳናል።
+                </p>
+                <button class="read-more"
+                    data-am="በየቀኑ ማንበብና መማር አዳዲስ እውቀቶችን እንድናገኝ ይረዳናል።"
+                    data-en="Reading and learning every day helps us develop new knowledge.">
+                    Read More / ተጨማሪ
+                </button>
+            </article>
+
+        </div>
+
+        <p id="noResults" hidden>
+            የፈለግከው ዜና አልተገኘም። No news found.
+        </p>
+
+        <section id="about">
+            <h2>About Us | ስለ እኛ</h2>
+            <p>
+                Habesha News የተማሪ ፕሮጀክት ነው።
+                ዓላማው ዜናና መረጃ በአማርኛና English
+                ማቅረብ ነው።
+            </p>
+            <p>
+                Habesha News is a learning project
+                designed to share information in two languages.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Habesha News | Made with HTML and CSS</p>
+    </footer>
+
+    <script>
+        const search = document.getElementById("search");
+        const category = document.getElementById("category");
+        const cards = document.querySelectorAll(".news-card");
+        const noResults = document.getElementById("noResults");
+
+        function filterNews() {
+            const term = search.value.toLowerCase();
+            const selected = category.value;
+            let visible = 0;
+
+            cards.forEach(card => {
+                const matchesText =
+                    card.textContent.toLowerCase().includes(term);
+
+                const matchesCategory =
+                    selected === "all" ||
+                    card.dataset.category === selected;
+
+                const show = matchesText && matchesCategory;
+                card.hidden = !show;
+
+                if (show) visible++;
+            });
+
+            noResults.hidden = visible !== 0;
+        }
+
+        search.addEventListener("input", filterNews);
+        category.addEventListener("change", filterNews);
+
+        document.querySelectorAll(".read-more").forEach(button => {
+            button.addEventListener("click", () => {
+                const message =
+                    button.dataset.am + "\n\n" +
+                    button.dataset.en;
+
+                alert(message);
+            });
+        });
+    </script>
+
+</body>
+</html>
+
